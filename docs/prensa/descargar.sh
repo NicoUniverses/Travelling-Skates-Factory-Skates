@@ -12,7 +12,7 @@ while IFS=$'\t' read -r name url; do
   if curl -fsSL -m 60 -A "Mozilla/5.0" -o "$name.tmp" "$url"; then ok=1; src="$url"; fi
   if [ $ok = 1 ] && [[ "$name" == *.pdf ]] && ! head -c 5 "$name.tmp" | grep -q '%PDF'; then ok=0; fi
   if [ $ok = 0 ]; then
-    ts=$(curl -fsS -m 60 "https://web.archive.org/cdx/search/cdx?url=$url&output=txt&fl=timestamp&filter=statuscode:200&limit=-1" | tail -1)
+    bare=${url#*://}; ts=$(curl -fsS -m 60 "https://web.archive.org/cdx/search/cdx?url=${bare}&output=txt&fl=timestamp&filter=statuscode:200&filter=mimetype:application/pdf" | tail -1)
     if [ -n "$ts" ] && curl -fsSL -m 120 -o "$name.tmp" "https://web.archive.org/web/${ts}id_/$url"; then ok=1; src="archive.org $ts"; fi
     if [ $ok = 1 ] && [[ "$name" == *.pdf ]] && ! head -c 5 "$name.tmp" | grep -q '%PDF'; then ok=0; fi
   fi
