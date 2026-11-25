@@ -30,8 +30,10 @@ def video(vid, title):
 
 TIMELINE = [
     ('fucsia', 'El comienzo',
-     'Nicolás E. Veiga Palacios funda Travelling Skates S.A. para fabricar en Argentina equipamiento de alto rendimiento '
-     'para patinaje artístico, y crea Argentina Technology Group SRL para desarrollar la tecnología de las planchas.'),
+     'Travelling Skates nace en 2010 de la mano de tres socios: Nicolás E. Veiga Palacios, el médico Daniel Uriona y '
+     'Guillermo González Díaz. En el consultorio encontraron defectos en patines importados que explicaban lesiones, y '
+     'se propusieron fabricar en Argentina equipamiento de alto rendimiento. Argentina Technology Group SRL se suma para '
+     'desarrollar la tecnología de las planchas.'),
     ('violeta', 'La primera prueba',
      'Cerca del 20% de las primeras planchas fabricadas presentó problemas estructurales. Todas fueron reemplazadas, '
      'pero en un deporte de alto rendimiento una sola falla en la pista puede costar años de confianza. Al mismo tiempo, '
@@ -96,18 +98,43 @@ def body():
       '</div></section>')
     # intro with founder
     a('<section class="h-wrap h-intro">'
-      + fig('nicolas-veiga-palacios-productos', 'Nicolás E. Veiga Palacios, fundador de Travelling Skates', 'hist-intro', 'h-intro-fig') +
+      + fig('patinadores-baradero', 'Patinadores, entrenadores y el equipo de Travelling Skates en el Club Atlético Baradero', 'hist-intro', 'h-intro-fig') +
       '<div><h2>Un atleta increíble, necesita productos increíbles.</h2>'
       '<p>Travelling Skates nació en Argentina para fabricar equipamiento de alto rendimiento para patinaje artístico, '
       'hockey sobre ruedas y roller derby: ruedas, planchas, frenos, suspensiones y rodamientos.</p>'
       '<p>No se construyó en condiciones ideales. Se construyó bajo presión, con incertidumbre técnica, restricciones '
       'financieras y riesgo de reputación. Su recorrido no se definió por evitar errores, sino por detectarlos a tiempo, '
-      'hacerse cargo y reestructurar con decisión.</p></div></section>')
+      'hacerse cargo y reestructurar con decisión.</p>'
+      '<p>Y no es la obra de una sola persona: socios, inversores, ingenieros, matriceros, operarios, distribuidores y, '
+      'sobre todo, patinadores y entrenadores que probaron cada producto en la pista.</p></div></section>')
     # timeline
     a('<section class="h-band"><div class="h-wrap"><h2 class="h-title">El camino</h2><ol class="h-timeline">')
     for color, title, text in TIMELINE:
         a(f'<li><span class="h-dot d-{color}"></span><h3>{esc(title)}</h3><p>{esc(text)}</p></li>')
     a('</ol></div></section>')
+    # people
+    a('<section class="h-wrap h-sec"><p class="h-kicker">LAS PERSONAS</p><h2 class="h-title">Detrás de cada patín</h2>'
+      '<p class="h-text">Travelling Skates se financió con el aporte de muchos: el capital inicial llegó por crowdfunding en '
+      'Argentina, con socios que iban desde empresarios hasta docentes. Con ellos se sumaron proveedores industriales, '
+      'programas públicos de apoyo y un equipo que en 2015 rondaba las 25 personas.</p>'
+      '<ul class="h-facts"><li><b>2010</b><span>año de inicio</span></li>'
+      '<li><b>~25</b><span>personas en el equipo (2015)</span></li>'
+      '<li><b>Córdoba</b><span>mecanizado de planchas</span></li>'
+      '<li><b>Carapachay</b><span>inyección de ruedas y frenos</span></li>'
+      '<li><b>Palermo</b><span>oficina y showroom</span></li></ul>'
+      '<h3 class="h-sub">Socios e inversores</h3><div class="h-grid g3">')
+    a(fig('socio-firma-certificado', 'Firma de certificados de acciones de Travelling Skates (2014)', 'hist-personas'))
+    a(fig('equipo-fecoba', 'Emprendedores y equipo en FECOBA, Federación de Comercio e Industria de Buenos Aires (2014)', 'hist-personas'))
+    a(fig('equipo-feria-maquinas', 'Buscando proveedores en la feria de máquinas herramienta (2014)', 'hist-personas'))
+    a('</div><h3 class="h-sub">En la planta</h3><div class="h-grid g4">')
+    a(fig('operario-centro-mecanizado', 'Operario en el centro de mecanizado', 'hist-personas'))
+    a(fig('planta-tornos-cnc', 'Planta de tornos y centros CNC', 'hist-personas'))
+    a(fig('ingenieria-planta', 'Ingeniería: planos de planchas frente a la planta', 'hist-personas'))
+    a(fig('control-dureza-shore', 'Control de dureza Shore D de cada lote de ruedas', 'hist-personas'))
+    a('</div><h3 class="h-sub">La oficina</h3><div class="h-grid g2">')
+    a(fig('oficina-showroom', 'Oficina y showroom de Travelling Skates', 'hist-personas'))
+    a(fig('oficina-showroom-2', 'Showroom con la línea de productos', 'hist-personas'))
+    a('</div></section>')
     # process: wheels
     a('<section class="h-wrap h-sec"><p class="h-kicker">PROCESO</p><h2 class="h-title">Así nace una rueda</h2>'
       '<p class="h-text">Cada rueda empieza en la pantalla. Se dibujaron varias propuestas de diseño para la rueda de 57 mm, '
@@ -129,6 +156,10 @@ def body():
     a('</div><div class="h-grid g2">')
     a(fig('ruedas-render-1', 'Línea de ruedas Travelling Skates', 'hist-ruedas'))
     a(fig('ruedas-render-2', 'Línea de ruedas Travelling Skates', 'hist-ruedas'))
+    a('</div><h3 class="h-sub">4 · Producto terminado</h3><div class="h-grid g3">')
+    a(fig('ruedas-quantum-mano', 'Quantum 47D y 52D recién salidas de producción', 'hist-ruedas'))
+    a(fig('ruedas-quantum-cajas', 'Quantum fucsia y violeta, listas para empacar', 'hist-ruedas'))
+    a(fig('ruedas-quantum-63', 'Quantum Ø63 en los cuatro colores de la marca', 'hist-ruedas'))
     a('</div></section>')
     # process: frames
     a('<section class="h-band"><div class="h-wrap h-sec"><p class="h-kicker">PROCESO</p><h2 class="h-title">Así nace una plancha</h2>'
@@ -152,6 +183,10 @@ def body():
     a(fig('molde-plancha', 'Molde de plancha', 'hist-planchas'))
     a(fig('planchas-doradas-produccion', 'Planchas doradas armadas en producción', 'hist-planchas'))
     a(fig('producto-plancha-dorada', 'Plancha dorada con ruedas Travelling Skates', 'hist-planchas'))
+    a('</div><div class="h-grid g3">')
+    a(fig('planchas-mecanizado-placas', 'Placas de aluminio mecanizadas con las siluetas de las planchas', 'hist-planchas'))
+    a(fig('mecanizado-ejes', 'Mecanizado de los soportes de ejes en el centro CNC', 'hist-planchas'))
+    a(fig('matriz-control-comparador', 'Control de la matriz con comparador antes de producir', 'hist-planchas'))
     a('</div></div></section>')
     # products
     a('<section class="h-wrap h-sec"><p class="h-kicker">PRODUCTOS</p><h2 class="h-title">Todo para tu patín</h2>'
@@ -179,16 +214,16 @@ def body():
     a('</div><a class="h-press" href="https://www.lanacion.com.ar/economia/sin-titulo-nid1762673/" target="_blank" rel="noopener">'
       '<span class="h-press-src">LA NACIÓN</span><span class="h-press-t">Travelling Skates en la sección Economía del diario La Nación</span>'
       '<span class="h-award-l">Leer la nota &rarr;</span></a>'
-      '<div class="h-grid g4">')
+      '<div class="h-grid g3">')
     a(fig('cfk-travelling-skates', 'Cristina Fernández de Kirchner con Travelling Skates', 'hist-prensa'))
-    a(fig('nicolas-uniona-georgi', 'Nicolás Veiga Palacios (izquierda), Daniel Uriona (centro) y Débora Georgi', 'hist-prensa'))
-    a(fig('nicolas-emprendedores', 'Nicolás con otros emprendedores, Inés Nevárez y Carlos Lerner', 'hist-prensa'))
+    a(fig('nicolas-uniona-georgi', 'Los socios Daniel Uriona y Nicolás Veiga Palacios con la ministra de Industria Débora Georgi', 'hist-prensa'))
     a(fig('fabrica-planta', 'Planta industrial', 'hist-prensa'))
     a('</div></section>')
     # community
     a('<section class="h-band"><div class="h-wrap h-sec"><p class="h-kicker">EN LA PISTA</p><h2 class="h-title">Con los patinadores</h2>'
       '<p class="h-text">Las Quantum se presentaron directamente a patinadores y entrenadores en una competencia nacional. '
-      'Desde entonces, Travelling Skates acompaña a los atletas en torneos y podios.</p><div class="h-grid g2">')
+      'Desde entonces, Travelling Skates acompaña a los atletas en torneos, clínicas y podios.</p><div class="h-grid g3">')
+    a(fig('patinadora-ruedas-gold', 'Patinadora con ruedas Quantum Gold', 'hist-pista'))
     a(fig('evento-podio', 'Podio con el stand de Travelling Skates', 'hist-pista'))
     a(fig('evento-torneo', 'Evento de patinaje', 'hist-pista'))
     a('</div></div></section>')
