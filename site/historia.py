@@ -181,7 +181,7 @@ def body():
       '<span class="h-award-l">Leer la nota &rarr;</span></a>'
       '<div class="h-grid g4">')
     a(fig('cfk-travelling-skates', 'Cristina Fernández de Kirchner con Travelling Skates', 'hist-prensa'))
-    a(fig('nicolas-uniona-georgi', 'Nicolás Veiga Palacios (izquierda), Daniel Uniona (centro) y Débora Georgi', 'hist-prensa'))
+    a(fig('nicolas-uniona-georgi', 'Nicolás Veiga Palacios (izquierda), Daniel Uriona (centro) y Débora Georgi', 'hist-prensa'))
     a(fig('nicolas-emprendedores', 'Nicolás con otros emprendedores, Inés Nevárez y Carlos Lerner', 'hist-prensa'))
     a(fig('fabrica-planta', 'Planta industrial', 'hist-prensa'))
     a('</div></section>')

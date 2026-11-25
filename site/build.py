@@ -325,6 +325,8 @@ def render(ctx, comps):
         elif ct == 'FiveGridLine':
             lc = color(st.get('clr', 'color_15')) if st else '#2F2E2E'
             piece = f'<div class="comp" style="{box(x, y, w, 0)}border-top:{st.get("lnw", "1px")} solid {lc}"></div>'
+        elif ct == 'FacebookLikeBox' and c.get('id') == 'comp-ilmc4wi5':
+            piece = home_videos_html(x, y, w, h)
         elif ct == 'FacebookLikeBox':
             pg = D.get('facebookPageId', '')
             fw = min(w, 500)
@@ -345,6 +347,18 @@ def render(ctx, comps):
             out.append(piece)
             bottom = max(bottom, y + h)
     return '\n'.join(out), bottom
+
+
+def home_videos_html(x, y, w, h):
+    vids = [('ze6OEQH6xF0', 'Travelling Skates en "Valor Agregado" &middot; Programa Encuentro'),
+            ('gU8ZA5r5Bow', 'Quantum Pro &middot; Quantum Dance &middot; Quantum Derby')]
+    out = [f'<div class="comp homevids" style="{box(x, y, w, h)}"><span class="teaser-k">TRAVELLING SKATES EN VIDEO</span>']
+    for vid, t in vids:
+        out.append(f'<button class="yt-lite" data-yt="{vid}" aria-label="Reproducir video" '
+                   f'style="background-image:url(https://i.ytimg.com/vi/{vid}/hqdefault.jpg)"><span class="yt-play"></span></button>'
+                   f'<span class="homevids-t">{t}</span>')
+    out.append('</div>')
+    return ''.join(out)
 
 
 def teaser_html(x, y, w, h):

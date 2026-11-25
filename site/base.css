@@ -170,3 +170,6 @@ a{color:inherit}
 .h-hero-txt{z-index:1}
 .h-hero-img{opacity:.75}
 .h-fig img,.h-prod-img,.teaser-img{background-color:#ECECEC}
+.homevids{display:flex;flex-direction:column;gap:10px;padding:22px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.homevids .yt-lite{flex:none}
+.homevids-t{font:300 15px/1.35 'Barlow',sans-serif;color:#605E5E;margin-bottom:8px}
