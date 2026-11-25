@@ -166,3 +166,7 @@ a{color:inherit}
 .h-btn{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 30px;color:#fff;text-decoration:none;font:300 16px/1 'Barlow',sans-serif;letter-spacing:.06em;box-shadow:0 2px 4px rgba(0,0,0,.35);transition:filter .2s}
 .h-btn:hover{filter:brightness(1.12)}
 .h-btn-blue{background:#2B5BA3}.h-btn-purple{background:#AB34C4}
+.h-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(47,46,46,.85) 0%,rgba(47,46,46,.55) 45%,rgba(47,46,46,0) 80%);pointer-events:none}
+.h-hero-txt{z-index:1}
+.h-hero-img{opacity:.75}
+.h-fig img,.h-prod-img,.teaser-img{background-color:#ECECEC}
